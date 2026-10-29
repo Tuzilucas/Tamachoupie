@@ -18,3 +18,6 @@ automatiquement à partir du projet Godot. Les décors utilisent des modèles li
 - **Ordinateur** : ZQSD / WASD ou flèches pour marcher, **Espace** pour sauter / voler / planer (maintenu),
   **F** pour souffler (fumée du bébé, flammes plus tard), **clic droit glissé** pour tourner la caméra, **molette**
   pour zoomer, double clic pour passer la cinématique.
+
+Si le jeu rame sur un ordinateur ou un téléphone peu puissant, il passe tout seul en qualité légère ; on peut aussi
+la forcer en ouvrant **https://tuzilucas.github.io/Tamachoupie/?qualite=basse**.
