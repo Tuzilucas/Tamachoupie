@@ -1,6 +1,6 @@
 # TamagoChoupie — version jouable en ligne
 
-Jeu 3D de compagnon virtuel (Tamagotchi), fait avec Godot 4.7. Gratuit, sans compte et sans publicité.
+Jeu 3D d'aventure et de survie mignon : Choupie, une petite créature née seule sur une île sauvage. Fait avec Godot 4.7. Gratuit, sans compte et sans publicité.
 
 **Jouer : https://tuzilucas.github.io/Tamachoupie/**
 
