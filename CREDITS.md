@@ -9,6 +9,7 @@
 | `jeu/assets/animaux` | Poule, mouton, biche, loup, moustique géant, lapin, abeille | TamagoChoupie (générés par `jeu/outils/dragon/generer_animaux.py`) | MIT — `jeu/assets/animaux/LICENSE.txt` |
 | `jeu/assets/son` | Musiques d'orchestre (cordes, violoncelle, piano, harpe, cor), pluie, éclaboussure et clapotis | TamagoChoupie (composées par `jeu/outils/son/generer_musique.py`) | MIT — `jeu/assets/son/LICENSE.txt` |
 | `jeu/assets/choupie` | Choupie, le bébé dragon | TamagoChoupie (généré par `jeu/outils/dragon/generer_dragon.py`) | MIT, comme le code du projet — `jeu/assets/choupie/LICENSE.txt` |
+| `jeu/assets/sol` | Textures du sol : herbe, terre, sable, roche (couleur et relief) | TamagoChoupie (générées par `jeu/outils/sol/generer_textures.py`) | MIT — `jeu/assets/sol/LICENSE.txt` |
 
 Source : https://quaternius.com. Seuls les modèles utilisés par le jeu sont conservés ; leurs textures ont été
 réduites à 1024 px pour les téléphones.
