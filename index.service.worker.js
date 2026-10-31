@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1793444923|4436388';
+const CACHE_VERSION = '1793445500|4449036';
 /** @type {string} */
 const CACHE_PREFIX = 'TamagoChoupie-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
