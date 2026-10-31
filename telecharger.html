@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Télécharger TamagoChoupie</title>
+<style>
+  :root { --fond: #1f1a2b; --carte: #2d2540; --texte: #f7f1e3; --doux: #c9bfd9; --vert: #4f9a5f; --orange: #e08a3c; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fond); color: var(--texte); font: 17px/1.5 system-ui, sans-serif; }
+  main { max-width: 640px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  .version { color: var(--doux); margin: 0 0 20px; }
+  .etat { padding: 14px 16px; border-radius: 14px; margin: 0 0 20px; font-weight: 600; display: none; }
+  .etat.a-jour { display: block; background: #2f5a3a; }
+  .etat.nouvelle { display: block; background: #6a4520; }
+  .carte { background: var(--carte); border-radius: 16px; padding: 18px; margin: 0 0 14px; }
+  .carte h2 { font-size: 20px; margin: 0 0 6px; }
+  .carte p { margin: 0 0 12px; color: var(--doux); }
+  a.bouton { display: inline-block; min-height: 48px; padding: 12px 20px; border-radius: 24px; background: var(--vert); color: #fff; font-weight: 700; text-decoration: none; }
+  a.bouton.orange { background: var(--orange); }
+  ol { margin: 8px 0 0; padding-left: 20px; color: var(--doux); }
+</style>
+</head>
+<body>
+<main>
+  <h1>TamagoChoupie</h1>
+  <p class="version">Dernière version : <span id="derniere">…</span></p>
+  <p id="etat" class="etat"></p>
+
+  <div class="carte">
+    <h2>Android (APK)</h2>
+    <p>Le plus fluide sur téléphone. Une nouvelle version s'installe par-dessus l'ancienne, la partie est gardée.</p>
+    <a class="bouton" href="TamagoChoupie.apk" download>Télécharger l'APK</a>
+    <ol>
+      <li>Ouvre le fichier téléchargé.</li>
+      <li>Si Android le demande, autorise l'installation d'applications pour ton navigateur ou l'app Fichiers.</li>
+      <li>Touche « Installer » (Play Protect peut prévenir que l'app ne vient pas du Play Store : « Installer quand même »).</li>
+    </ol>
+  </div>
+
+  <div class="carte">
+    <h2>Windows</h2>
+    <p>Décompresse le zip, puis lance TamagoChoupie.exe (garde les deux fichiers ensemble).</p>
+    <a class="bouton" href="TamagoChoupie-windows.zip" download>Télécharger pour Windows</a>
+  </div>
+
+  <div class="carte">
+    <h2>Jouer dans le navigateur</h2>
+    <p>Rien à installer. Dans Chrome sur Android : menu ⋮ → « Installer l'application » pour l'avoir sur l'écran d'accueil ; elle se met à jour toute seule.</p>
+    <a class="bouton orange" href="./">Jouer en ligne</a>
+  </div>
+</main>
+<script>
+  // Le jeu ouvre cette page avec sa version (?v=…) : on dit s'il en existe une plus récente.
+  const installee = new URLSearchParams(location.search).get("v");
+  const code = (v) => Number(String(v || "").split(".").pop()) || 0;
+  fetch("version.json", { cache: "no-store" }).then((r) => r.json()).then((d) => {
+    document.getElementById("derniere").textContent = d.version;
+    if (!installee) return;
+    const etat = document.getElementById("etat");
+    if (code(installee) >= d.code) {
+      etat.textContent = "Tu as déjà la dernière version ✓";
+      etat.className = "etat a-jour";
+    } else {
+      etat.textContent = "Nouvelle version disponible : télécharge-la ci-dessous et installe-la par-dessus.";
+      etat.className = "etat nouvelle";
+    }
+  }).catch(() => {});
+</script>
+</body>
+</html>
