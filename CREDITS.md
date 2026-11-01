@@ -13,13 +13,15 @@
 | `jeu/assets/calinounou` | Calinounou, la licorne en peluche compagne de Choupie (d'après la peluche de Lucas) | TamagoChoupie (générée par `jeu/outils/dragon/generer_calinounou.py`) | MIT — `jeu/assets/calinounou/LICENSE.txt` |
 | `jeu/assets/cinematique` | Bruitages de la cinématique d'ouverture : tonnerre et grondement d'orage, pluie battante, rivière, cascade, mer, œuf qui roule, plongeons (recadrés, filtrés et mêlés par `jeu/outils/son/preparer_cinematique.py`, origine de chaque fichier dans `cinematique.json`) | Pixel-boy & AAA (« Ninja Adventure », https://pixel-boy.itch.io/ninja-adventure-asset-pack) et Kenney (« Impact Sounds », https://kenney.nl) | CC0 1.0 (domaine public) — `jeu/assets/cinematique/LICENSE.txt` |
 | `jeu/assets/gigi` | Gigi, la grenouille en peluche de la vieille maison, et son bébé canard Fifi (d'après les peluches de Lucas) | TamagoChoupie (générés par `jeu/outils/dragon/generer_gigi.py`) | MIT — `jeu/assets/gigi/LICENSE.txt` |
+| `jeu/assets/amies` | Lili, la chienne de Lucas, et Petit chat, sa chatte (d'après les photos de leurs animaux) ; petit aboiement de Lili (`aboiement.wav`, adouci) | TamagoChoupie (modèles générés par `jeu/outils/dragon/generer_amies.py`) ; aboiement : Pixel-boy & AAA (« Ninja Adventure », https://pixel-boy.itch.io/ninja-adventure-asset-pack) | Modèles : MIT ; aboiement : CC0 1.0 — `jeu/assets/amies/LICENSE.txt` |
 | `jeu/assets/choupie` | Choupie, le bébé dragon | TamagoChoupie (généré par `jeu/outils/dragon/generer_dragon.py` ; œil « peluche » du bébé `oeil_bebe_doux.png` par `generer_oeil_bebe.py`) | MIT, comme le code du projet — `jeu/assets/choupie/LICENSE.txt` |
+| `jeu/assets/choupie` | Choupie, le bébé dragon | TamagoChoupie (généré par `jeu/outils/dragon/generer_dragon.py` ; œil « peluche » du bébé `oeil_bebe_doux.png` par `generer_oeil_bebe.py` ; yeux bleus `oeil_choupie_*.png` par `generer_oeil_choupie.py`) | MIT, comme le code du projet — `jeu/assets/choupie/LICENSE.txt` |
 | `jeu/assets/sol` | Textures du sol : herbe, terre, sable, roche (couleur et relief) | TamagoChoupie (générées par `jeu/outils/sol/generer_textures.py`) | MIT — `jeu/assets/sol/LICENSE.txt` |
 
 Source : https://quaternius.com. Seuls les modèles utilisés par le jeu sont conservés ; leurs textures ont été
 réduites à 1024 px pour les téléphones.
 
-Choupie, Calinounou, Gigi, Fifi et les animaux de l'île sont modélisés par code (volumes lisses, squelette, yeux texturés) : aucun modèle
+Choupie, Calinounou, Gigi, Fifi, Lili, Petit chat et les animaux de l'île sont modélisés par code (volumes lisses, squelette, yeux texturés) : aucun modèle
 tiers pour les personnages.
 
 ## Code, sons, interface
