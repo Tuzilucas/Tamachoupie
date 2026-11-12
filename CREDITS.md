@@ -6,7 +6,7 @@
 | -------------------- | -------------------------------------- | ---------- | ---------------------------------------------------------- |
 | `jeu/assets/nature`  | Stylized Nature MegaKit (version Standard) | Quaternius | CC0 1.0 (domaine public) — `jeu/assets/nature/LICENSE.txt`  |
 | `jeu/assets/village` | Medieval Village MegaKit (version Standard) | Quaternius | CC0 1.0 (domaine public) — `jeu/assets/village/LICENSE.txt` |
-| `jeu/assets/animaux` | Poule, mouton, biche, loup, moustique géant, lapin, abeille | TamagoChoupie (générés par `jeu/outils/dragon/generer_animaux.py`) | MIT — `jeu/assets/animaux/LICENSE.txt` |
+| `jeu/assets/animaux` | Poule, mouton, biche, loup, moustique géant, lapin, abeille, écureuil, renard, hérisson | TamagoChoupie (générés par `jeu/outils/dragon/generer_animaux.py`) | MIT — `jeu/assets/animaux/LICENSE.txt` |
 | `jeu/assets/son` | Musiques d'orchestre (cordes, violoncelle, piano, harpe, cor), pluie, éclaboussure et clapotis | TamagoChoupie (composées par `jeu/outils/son/generer_musique.py`) | MIT — `jeu/assets/son/LICENSE.txt` |
 | `jeu/assets/son/cri_*.wav` | Cris de Choupie : glapissement du bébé, cri de l'ado, rugissement de l'adulte (création originale, aucun échantillon tiers) | TamagoChoupie (composés par `jeu/outils/son/generer_cris.py`, description dans `cris.json`) | MIT — `jeu/assets/son/LICENSE.txt` |
 | `jeu/assets/voix` | Voix enregistrées des personnages (fichiers `<id_de_replique>.ogg`, ajoutés au fil de l'enregistrement) | Lucas Tuzi (auteur du jeu) | MIT — `jeu/assets/voix/LICENSE.txt` |
