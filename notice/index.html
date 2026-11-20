@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>Notice de TamagoChoupie</title>
-<meta name="description" content="La notice de TamagoChoupie : prendre soin de Choupie, le faire grandir, les commandes, les dangers et les amis de l'île.">
+<link rel="icon" type="image/png" href="images/icone.png">
+<meta name="description" content="La notice de TamagoChoupie : prendre soin de Choupie, le faire grandir, voler, les commandes, les dangers et les amis de l'île.">
 <style>
   /* Couleurs de la planche de Lucas : or-orangé, crème, cyan. */
   :root {
@@ -263,7 +264,9 @@
       <li><a href="#soins">Prendre soin de Choupie</a></li>
       <li><a href="#grandir">Grandir</a></li>
       <li><a href="#commandes">Les commandes</a></li>
+      <li><a href="#voler">Sauter et voler</a></li>
       <li><a href="#manger">Manger et chasser</a></li>
+      <li><a href="#papillons">Les papillons</a></li>
       <li><a href="#dangers">Les dangers</a></li>
       <li><a href="#abris">Abris et sommeil</a></li>
       <li><a href="#amis">Les amis</a></li>
@@ -344,7 +347,7 @@
     <div class="stades">
       <div class="stade"><img src="images/jeu/oeuf.jpg" width="1280" height="720" loading="lazy" alt="L'œuf sur la plage."><h3>L'œuf</h3><p>Il éclot quand on l'a assez caressé.</p></div>
       <div class="stade"><img src="images/lucas/bebe.jpg" width="270" height="275" loading="lazy" alt="Choupie bébé, dessin de Lucas."><h3>Bébé</h3><p>Tout petit et fragile. Il saute et plane un peu. Il crache de la fumée.</p></div>
-      <div class="stade"><img src="images/lucas/ado.jpg" width="496" height="670" loading="lazy" alt="Choupie ado, dessin de Lucas."><h3>Ado</h3><p>Plus grand et plus fort. Il bat des ailes quelques fois et crache des petites flammes.</p></div>
+      <div class="stade"><img src="images/lucas/ado.jpg" width="496" height="670" loading="lazy" alt="Choupie ado, dessin de Lucas."><h3>Ado</h3><p>Plus grand et plus fort. Il vole tant qu'il a du souffle et crache des petites flammes. La nuit, ses touches bleues brillent.</p></div>
       <div class="stade"><img src="images/lucas/adulte.jpg" width="560" height="670" loading="lazy" alt="Choupie adulte, dessin de Lucas, avec ses grandes ailes."><h3>Adulte</h3><p>Grand et puissant. Il vole aussi longtemps qu'il veut et crache du feu.</p></div>
     </div>
     <p class="petit">Dessins de Lucas : c'est le Choupie de demain. Dans le jeu, Choupie est en train de prendre cette
@@ -355,10 +358,13 @@
         <ul>
           <li>Un repas <strong>différent</strong> des trois derniers fait grandir plus vite.</li>
           <li>La même chose quatre fois de suite ? Choupie fait la moue, et grandit moins.</li>
-          <li>Chaque nouveau goût fait briller une étoile dorée. Il y a <strong>11 goûts</strong> sur l'île. Le
+          <li>Chaque nouveau goût fait briller une étoile dorée. Il y a <strong>16 goûts</strong> sur l'île. Le
             <strong>carnet des goûts</strong> (dans la pause) les montre. Quand il est complet, Choupie peut changer la
             couleur de ses écailles.</li>
+          <li><strong>Chaque bouchée</strong> fait grandir, même le ventre plein. Des bouchées à la suite font grandir
+            encore plus vite : c'est le festin (voir « Manger et chasser »).</li>
           <li>Les missions de Calinounou font aussi grandir.</li>
+          <li>Attraper les quatre sortes de papillons donne un gros coup de pouce.</li>
         </ul>
         <p>De bébé à ado, il faut environ trois heures de jeu. Pendant ce temps, de petits détails poussent sur son
           corps : des cornes, des écailles…</p>
@@ -376,6 +382,8 @@
       <figure class="photo"><img src="images/jeu/ado.jpg" width="1280" height="720" loading="lazy" alt="Choupie ado dans le jeu, sur la plage."><figcaption>Choupie ado, dans le jeu.</figcaption></figure>
       <figure class="photo"><img src="images/jeu/adulte.jpg" width="1280" height="720" loading="lazy" alt="Choupie adulte dans le jeu, sur la plage."><figcaption>Choupie adulte, dans le jeu.</figcaption></figure>
     </div>
+    <p class="encadre cyan"><strong>L'ado, la nuit.</strong> Quand il fait noir, les touches bleu cyan de ses écailles
+      brillent doucement, comme une petite lumière. Et quand il bouge, une fine traînée de paillettes le suit.</p>
   </section>
 
   <!-- 4. Commandes -->
@@ -391,7 +399,8 @@
           tout doucement, sans bruit.</p>
         <h3>Pouce droit : regarder</h3>
         <p>Glisse le pouce à droite pour tourner la vue. Pince avec deux doigts pour voir de plus près ou de plus
-          loin.</p>
+          loin : on peut reculer loin pour voir tout le paysage. Quand Choupie avance et que tu ne touches pas à la
+          vue, elle revient vite toute seule derrière lui.</p>
         <h3>Toucher</h3>
         <p>Touche Choupie pour un câlin. Touche Calinounou pour lui parler. Touche Lili ou Petit chat pour les
           caresser.</p>
@@ -401,26 +410,51 @@
         <p>Sous le pouce droit, toujours à la même place :</p>
         <ul class="liste-icones" style="grid-template-columns:1fr">
           <li><span class="rond" style="background:#8a4fd8"><svg aria-hidden="true"><use href="#i-fruit"/></svg></span><span><strong>Le grand bouton violet</strong>L'action du moment. Son dessin change : manger, boire, dormir, gober un œuf, dévorer, ramasser un trésor…</span></li>
-          <li><span class="rond" style="background:#2fa4e7"><svg aria-hidden="true"><use href="#i-aile"/></svg></span><span><strong>L'aile</strong>Sauter. En l'air : battre des ailes. Garde le doigt dessus pour planer.</span></li>
-          <li><span class="rond" style="background:#e8513a"><svg aria-hidden="true"><use href="#i-griffes"/></svg></span><span><strong>Les griffes</strong>Attaquer. Le bouton s'allume quand une proie est tout près.</span></li>
+          <li><span class="rond" style="background:#2fa4e7"><svg aria-hidden="true"><use href="#i-aile"/></svg></span><span><strong>L'aile</strong>Sauter. Appuie encore en l'air pour t'envoler (ado et adulte). Le bébé, lui, plane si tu gardes le doigt dessus.</span></li>
+          <li><span class="rond" style="background:#e8513a"><svg aria-hidden="true"><use href="#i-griffes"/></svg></span><span><strong>Les griffes</strong>Attaquer. Le bouton s'allume quand une proie est tout près. Près d'un papillon, Choupie bondit pour l'attraper.</span></li>
           <li><span class="rond" style="background:#f08a24"><svg aria-hidden="true"><use href="#i-rugir"/></svg></span><span><strong>Le cri</strong>Rugir : des animaux s'enfuient (plus Choupie est grand, plus ils ont peur). Mais les loups l'entendent aussi ! Il faut attendre un peu entre deux cris.</span></li>
-          <li><span class="rond" style="background:#e2b200"><svg aria-hidden="true"><use href="#i-eclair"/></svg></span><span><strong>L'éclair</strong>Courir vite. Allumé, Choupie sprinte. Ça fait du bruit et ça fatigue.</span></li>
-          <li><span class="rond" style="background:#3f9a5c"><svg aria-hidden="true"><use href="#i-patte"/></svg></span><span><strong>La patte</strong>Se faufiler à pas de velours, sans bruit, pour chasser.</span></li>
+          <li><span class="rond" style="background:#e2b200"><svg aria-hidden="true"><use href="#i-eclair"/></svg></span><span><strong>L'éclair</strong>Courir vite. Allumé, Choupie sprinte. Ça fait du bruit et ça fatigue. En vol, c'est un coup de vitesse. L'anneau autour du bouton montre son souffle.</span></li>
+          <li><span class="rond" style="background:#3f9a5c"><svg aria-hidden="true"><use href="#i-patte"/></svg></span><span><strong>La patte</strong>Se faufiler à pas de velours, sans bruit, pour chasser (et pour approcher les papillons).</span></li>
           <li><span class="rond" style="background:#2b2135"><svg aria-hidden="true"><use href="#i-pause"/></svg></span><span><strong>Pause</strong>Le petit bouton en haut à droite. Le jeu s'arrête.</span></li>
         </ul>
       </div>
     </div>
+    <h3 id="voler">Sauter, planer et voler</h3>
+    <div class="deux">
+      <div>
+        <ul>
+          <li><strong>Au sol</strong>, un appui sur l'aile : Choupie saute.</li>
+          <li><strong>Le bébé</strong> saute, puis plane si tu gardes le doigt sur l'aile. Il ne vole pas encore.</li>
+          <li><strong>L'ado et l'adulte</strong> s'envolent : appuie une deuxième fois sur l'aile en l'air, ou garde
+            le doigt dessus un petit instant.</li>
+          <li>Il se pose tout seul quand il touche le sol.</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><strong>En vol, Choupie va là où tu regardes.</strong> Relève la vue pour monter, baisse-la pour
+            descendre en piqué.</li>
+          <li>Le joystick le fait aller plus vite, ralentir, ou se décaler sur le côté.</li>
+          <li>L'éclair donne un coup de vitesse.</li>
+          <li>En piqué, le vent siffle et la vue s'élargit : ça va vite !</li>
+        </ul>
+      </div>
+    </div>
+    <p class="encadre cyan"><strong>Le souffle de l'ado.</strong> L'ado ne peut pas voler très longtemps : regarde
+      l'anneau autour du bouton éclair. Plus il va vite ou plus il monte, plus il s'essouffle. À bout de souffle, il
+      redescend en planant, puis il se repose un peu. <strong>L'adulte</strong>, lui, vole aussi longtemps qu'il
+      veut.</p>
     <h3>Sur l'ordinateur</h3>
     <div class="tableau">
       <table>
         <tr><th scope="row">Marcher</th><td><kbd>Z</kbd> <kbd>Q</kbd> <kbd>S</kbd> <kbd>D</kbd>, ou <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd>, ou les flèches</td></tr>
-        <tr><th scope="row">Courir vite</th><td><kbd>Maj</kbd></td></tr>
+        <tr><th scope="row">Courir vite (en vol : coup de vitesse)</th><td><kbd>Maj</kbd></td></tr>
         <tr><th scope="row">Marcher sans bruit</th><td><kbd>Ctrl</kbd> en marchant, ou <kbd>C</kbd> pour allumer et éteindre la patte</td></tr>
-        <tr><th scope="row">Sauter, voler, planer</th><td><kbd>Espace</kbd> (garde la touche pour planer)</td></tr>
+        <tr><th scope="row">Sauter, planer, voler</th><td><kbd>Espace</kbd> pour sauter ; encore <kbd>Espace</kbd> en l'air (ou garde la touche) pour s'envoler ; le bébé garde la touche pour planer</td></tr>
         <tr><th scope="row">Action et attaque</th><td><kbd>E</kbd></td></tr>
         <tr><th scope="row">Rugir</th><td><kbd>R</kbd></td></tr>
         <tr><th scope="row">Souffler (fumée ou flammes)</th><td><kbd>F</kbd></td></tr>
-        <tr><th scope="row">Tourner la vue</th><td>Clic droit en glissant ; la molette pour zoomer</td></tr>
+        <tr><th scope="row">Tourner la vue (en vol : diriger)</th><td>Clic droit en glissant ; la molette pour voir de plus près ou de plus loin</td></tr>
         <tr><th scope="row">Pause</th><td><kbd>Échap</kbd></td></tr>
       </table>
     </div>
@@ -439,31 +473,54 @@
           <li><strong>Les pommes</strong> sont en haut des arbres. Cours avec l'éclair et fonce dans l'arbre : des pommes
             tombent ! Mais attention : parfois une branche tombe, ou des abeilles sortent.</li>
           <li>Les pommes de pin des sapins ne se mangent pas.</li>
-          <li>Ce qu'on a mangé repousse le lendemain.</li>
+          <li>Les baies et les champignons mangés repoussent vite : environ 4 minutes plus tard. Les pommes d'un arbre
+            reviennent le lendemain.</li>
         </ul>
       </div>
       <div>
         <h3>Ce que Choupie peut chasser</h3>
         <div class="tableau">
           <table>
-            <tr><th>Bébé</th><td>les œufs des nids, les poules, les lapins, les moustiques géants et les abeilles</td></tr>
-            <tr><th>Ado</th><td>en plus : les moutons et les biches</td></tr>
+            <tr><th>Bébé</th><td>les œufs des nids, les poules, les lapins, les écureuils, les moustiques géants et les abeilles</td></tr>
+            <tr><th>Ado</th><td>en plus : les moutons, les biches et les renards</td></tr>
             <tr><th>Adulte</th><td>en plus : les loups</td></tr>
           </table>
         </div>
         <p>Les animaux mangés reviennent : ils font des petits.</p>
+        <p>Le hérisson, lui, ne se mange pas. Et attention : marcher dessus, ça pique !</p>
       </div>
     </div>
     <div class="encadre cyan">
       <p><strong>Chasser en douceur.</strong> Les animaux voient devant eux et entendent les pas. Allume la patte et
-        approche par derrière, tout doucement. Puis attaque avec les griffes, et dévore ta proie avec le grand
-        bouton.</p>
+        approche par derrière, tout doucement. Puis attaque avec les griffes. L'animal attrapé reste couché par terre,
+        sans bouger. Touche le grand bouton pour le dévorer : Choupie baisse la tête et mange tranquillement.</p>
     </div>
-    <div class="encadre rose">
-      <p><strong>Pas trop !</strong> Si Choupie mange alors qu'il n'a plus faim, il se gave. Il a mal au ventre : il perd
-        de la santé et court moins vite pendant un petit moment.</p>
+    <div class="encadre">
+      <p><strong>C'est la fête : le festin !</strong> Choupie peut manger même quand il n'a plus faim : il a le ventre
+        bien rond, et il n'est pas malade. Chaque bouchée le fait grandir.</p>
+      <p>Enchaîne les bouchées sans attendre (moins de 6 secondes entre deux) : il grandit de plus en plus vite, jusqu'à
+        trois fois plus vite ! Le message « Festin ×2 ! » montre que ça marche.</p>
     </div>
     <p class="petit">Un mouton ou une biche peut donner un coup de corne ou de sabot. Un moustique géant pique.</p>
+
+    <h3 id="papillons">La chasse aux papillons</h3>
+    <div class="deux">
+      <div>
+        <p>Des papillons volent un peu partout sur l'île. C'est un jeu parfait pour le bébé, mais Choupie peut y jouer à
+          tout âge.</p>
+        <ol>
+          <li>Allume la <strong>patte</strong> et approche tout doucement. Si Choupie court, le papillon s'envole !</li>
+          <li>Tout près, touche les <strong>griffes</strong> : Choupie bondit.</li>
+          <li>Hop ! Le papillon est attrapé… puis relâché. On ne mange pas les papillons.</li>
+        </ol>
+      </div>
+      <div>
+        <p>Il y a <strong>4 sortes</strong> de papillons : le monarque, le bleu, le citron et le blanc. Chaque nouvelle
+          sorte attrapée entre au carnet. Le compteur est dans la liste des <strong>quêtes</strong>, dans la pause.</p>
+        <p>Les quatre trouvées ? Choupie est tout fier, et il grandit d'un grand coup.</p>
+        <p>Calinounou propose aussi deux missions : attraper un papillon, et attraper un papillon bleu.</p>
+      </div>
+    </div>
   </section>
 
   <!-- 6. Dangers -->
@@ -494,6 +551,7 @@
       <li><span class="bulle-picto"><svg aria-hidden="true"><use href="#i-lune"/></svg></span><span><strong>La nuit</strong>Il fait froid dehors. Un jour entier dure 12 minutes : la nuit arrive vite !</span></li>
       <li><span class="bulle-picto"><svg aria-hidden="true"><use href="#i-goutte"/></svg></span><span><strong>La mer</strong>L'eau salée fait mal si on la boit. Au large, un courant ramène Choupie vers l'île.</span></li>
       <li><span class="bulle-picto"><svg aria-hidden="true"><use href="#p-danger"/></svg></span><span><strong>Les abeilles et les moustiques géants</strong>Ils piquent. Contre les abeilles : fuis, cache-toi ou plonge dans l'eau. Les moustiques géants volent près de la mer et au bord de la forêt ; dans un abri, ils te laissent tranquille.</span></li>
+      <li><span class="bulle-picto"><svg aria-hidden="true"><use href="#p-danger"/></svg></span><span><strong>Le hérisson</strong>Il ne se mange pas. Marche à côté : si Choupie lui marche dessus, ça pique !</span></li>
     </ul>
   </section>
 
@@ -502,13 +560,18 @@
     <h2><span class="num">7</span>Abris et sommeil</h2>
     <div class="deux">
       <div>
-        <p>Un abri, c'est une <strong>grotte</strong> au pied du volcan, ou un tas de <strong>gros rochers</strong>.</p>
+        <p>Un abri, c'est une <strong>grotte</strong> au pied du volcan, un tas de <strong>gros rochers</strong>, ou le
+          <strong>creux chaud</strong> tout en haut du volcan.</p>
         <ul>
           <li>Choupie ne peut dormir que dans un abri. Le grand bouton montre une lune : touche-le.</li>
           <li>Il dort quand il a sommeil, ou quand c'est la nuit. Il se réveille le matin, en pleine forme.</li>
           <li>Dans l'abri, il est au chaud et les loups ne peuvent pas l'attraper.</li>
           <li>Sous un arbre, il est au sec quand il pleut. Mais pour dormir, il faut un vrai abri.</li>
         </ul>
+        <h3>Le creux chaud du volcan</h3>
+        <p>Au sommet du volcan, dans le cratère, il y a un petit creux plein de braises qui rougeoient (sans lave, pas
+          de danger). Choupie peut s'y coucher : il dort à l'abri, et bien au chaud, comme près d'un feu. Pour y monter,
+          suis le <strong>sentier des animaux</strong> : il grimpe en zigzag jusqu'en haut.</p>
         <h3>Le bilan du soir</h3>
         <p>Quand Choupie s'endort à l'abri la nuit, un petit tableau montre sa journée : ses repas, combien il a grandi,
           les lieux découverts. Touche l'écran pour le fermer.</p>
@@ -537,6 +600,19 @@
             ou <strong>Plus tard</strong>. Si c'est plus tard, elle attend près de l'abri.</p>
           <p>Amie, elle marche à côté de Choupie, s'assoit quand il s'arrête et dort près de lui. Elle propose des
             <strong>missions</strong> qui le font grandir, et parfois un cadeau.</p>
+          <p>Et elle fait des farces : un petit pet arc-en-ciel, une gerbe de paillettes quand elle
+            goûte un champignon, et parfois un cupcake posé dans l'herbe… que Choupie peut manger !</p>
+        </div>
+      </article>
+      <article class="perso">
+        <div class="cadre"><img src="images/jeu/vulcana.jpg" data-artwork="vulcana" width="1280" height="720" loading="lazy" alt="Vulcana, la petite dragonne rouge feu, à côté de Choupie bébé, au milieu des braises du cratère."><span class="etiquette">Dans le jeu</span></div>
+        <div class="texte">
+          <h3>Vulcana</h3>
+          <p>Tout en haut du volcan, au fond du cratère, un œuf de braise attend dans les cendres chaudes. Va le voir,
+            mets-toi tout près et appuie sur <strong>Souffler</strong> : Choupie souffle sa fumée chaude, l'œuf se fend,
+            Choupie toque doucement… et une petite dragonne sort la tête avec un grand sourire.</p>
+          <p>Vulcana est rouge feu, avec des pointes couleur de braise qui rougeoient. Elle suit Choupie partout et
+            grandit avec lui : chaque fois qu'il mange près d'elle, elle grandit aussi.</p>
         </div>
       </article>
       <article class="perso">
@@ -574,6 +650,9 @@
     <h2><span class="num">9</span>Les lieux à découvrir</h2>
     <p>L'île est grande, et on y va partout sans attendre : la plage, la forêt, le lac et la rivière, le volcan au milieu,
       les grottes, la vieille maison de Gigi.</p>
+    <p>Le <strong>volcan</strong> a des flancs couverts d'herbe sèche et de petits pins. Un sentier d'animaux monte en
+      zigzag jusqu'au cratère, où se cache le creux chaud (voir « Abris et sommeil »). Avec ses ailes, l'ado ou l'adulte
+      peut aussi y monter en volant.</p>
     <div class="grille-3">
       <figure class="photo"><img src="images/jeu/plage.jpg" width="1280" height="720" loading="lazy" alt="Choupie et Calinounou dans l’herbe, près de la plage d’arrivée et de la maison de Gigi."><figcaption>Près de la plage d’arrivée</figcaption></figure>
       <figure class="photo"><img src="images/jeu/foret.jpg" width="1280" height="720" loading="lazy" alt="La forêt dense de l'île."><figcaption>La forêt</figcaption></figure>
@@ -583,7 +662,7 @@
       <figure class="photo"><img src="images/jeu/boue.jpg" width="1280" height="720" loading="lazy" alt="Choupie qui saute dans une flaque de boue."><figcaption>Splotch ! Une flaque de boue.</figcaption></figure>
     </div>
     <h3>Six lieux secrets</h3>
-    <p>Le belvédère en haut du volcan, l'épave sur une plage lointaine, les ruines dans la forêt, la clairière fleurie, la
+    <p>Le cratère en haut du volcan, l'épave sur une plage lointaine, les ruines dans la forêt, la clairière fleurie, la
       source de la rivière et la grotte aux cristaux. Quand Choupie en trouve un, des étincelles dorées montent, et la
       boussole s'en souvient.</p>
     <div class="deux">
@@ -620,7 +699,7 @@
         <p>Touche le petit bouton en haut à droite (ou <kbd>Échap</kbd>). Le temps s'arrête.</p>
         <ul class="liste-icones" style="grid-template-columns:1fr">
           <li><span class="rond" style="background:#b07a2a"><svg aria-hidden="true"><use href="#i-carnet"/></svg></span><span><strong>Le carnet des goûts</strong>Les saveurs déjà goûtées, et les couleurs d'écailles.</span></li>
-          <li><span class="rond" style="background:#3f7fd8"><svg aria-hidden="true"><use href="#i-quetes"/></svg></span><span><strong>Les quêtes</strong>Ce qu'il y a à faire, coché quand c'est fait.</span></li>
+          <li><span class="rond" style="background:#3f7fd8"><svg aria-hidden="true"><use href="#i-quetes"/></svg></span><span><strong>Les quêtes</strong>Ce qu'il y a à faire, coché quand c'est fait. On y voit aussi combien de sortes de papillons Choupie a attrapées.</span></li>
           <li><span class="rond" style="background:#2f8f8a"><svg aria-hidden="true"><use href="#i-boussole"/></svg></span><span><strong>La boussole</strong>L'afficher ou la cacher.</span></li>
           <li><span class="rond" style="background:#4a7bd0"><svg aria-hidden="true"><use href="#i-loupe"/></svg></span><span><strong>Accessibilité</strong>Dessins plus grands, jauges en formes, moins de mouvements, sprint en gardant le bouton, aide à la morsure, contour de Choupie, sans vibrations.</span></li>
         </ul>
@@ -665,6 +744,7 @@
         <li>Suis la boussole en haut de l'écran : elle montre où aller.</li>
         <li>Pour les pommes, il faut courir avec l'éclair avant de foncer dans l'arbre.</li>
         <li>Varie les repas : Choupie grandit bien plus vite.</li>
+        <li>Plein de baies au même endroit ? Mange-les à la suite, sans traîner : c'est le festin !</li>
       </ul>
       <ul>
         <li>Un bain de temps en temps : un Choupie propre se fait moins sentir par les loups.</li>
@@ -672,6 +752,8 @@
         <li>Le soir, monte sur un point haut pour voir le coucher du soleil.</li>
         <li>Les vieux arbres secs tombent quand Choupie fonce dedans en courant.</li>
         <li>Un loup grogne ? Ne reste pas là : file vers un abri ou un grand buisson.</li>
+        <li>Une nuit froide ? Le creux chaud du volcan est l'abri le plus douillet de l'île.</li>
+        <li>Ado, garde un œil sur l'anneau de l'éclair en vol : pose-toi avant d'être à bout de souffle.</li>
       </ul>
     </div>
   </section>
@@ -681,11 +763,8 @@
     <h2><span class="num">14</span>Bientôt sur l'île</h2>
     <p><strong>Attention : rien de cette liste n'est encore dans le jeu.</strong> Ce sont des idées prévues avec Lucas.</p>
     <ul>
-      <li>La nouvelle apparence de Choupie, d'après les dessins de Lucas : corps doré, ailes transparentes au bout
-        cyan.</li>
-      <li>De nouveaux animaux : des hérissons (ils piquent quand on marche dessus, on ne les mange pas), des renards et
-        des écureuils.</li>
-      <li>Les farces de Calinounou : paillettes, arcs-en-ciel et cupcakes.</li>
+      <li>La nouvelle apparence de Choupie bébé et de Choupie adulte, d'après les dessins de Lucas : corps doré, ailes
+        transparentes au bout cyan. (L'ado a déjà la sienne !)</li>
       <li>Les quêtes de Gigi et de Lili : aider Gigi à réparer sa maison, pièce par pièce.</li>
       <li>Fabriquer, faire du feu et construire une cabane quand Choupie est ado ; réparer la maison, cultiver un
         jardin et construire sa maison quand il est adulte.</li>
@@ -707,14 +786,21 @@
       <li>Les arbres, les rochers et la vieille maison viennent des packs libres de droits de Quaternius (CC0).</li>
       <li>Des bruitages viennent de Kenney et de Pixel-boy &amp; AAA (CC0).</li>
       <li>Les dessins de Choupie sont la planche de référence de Lucas.</li>
+      <li>Le corps de Choupie ado, lui, est fabriqué à partir de ces dessins, par un outil qui transforme une image en 3D
+        (TRELLIS, licence MIT).</li>
     </ul>
+    <div class="encadre cyan" style="display:flex;gap:14px;align-items:center">
+      <img src="images/icone.png" width="90" height="90" loading="lazy" alt="L'icône du jeu : le portrait de Choupie ado, sur un ciel bleu." style="flex:none;border-radius:20px">
+      <p><strong>La nouvelle icône du jeu</strong> : le portrait de Choupie ado, d'après la planche de Lucas. C'est elle
+        que tu touches sur le téléphone pour lancer le jeu.</p>
+    </div>
     <p class="petit">La liste complète, avec les licences, est dans le fichier <code>CREDITS.md</code> livré avec le jeu.</p>
     <figure class="photo pas-imprime"><img src="images/lucas/planche.jpg" width="1536" height="1024" loading="lazy" alt="La planche de référence de Choupie par Lucas : bébé, ado, adulte, expressions et poses." style="aspect-ratio:auto"><figcaption>La planche de référence de Lucas.</figcaption></figure>
   </section>
 </main>
 
 <footer>
-  Notice écrite pour la version <span id="version-jeu">2.0.0.29919409</span> du jeu.
+  Notice écrite pour la version <span id="version-jeu">2.0.0.29919521</span> du jeu.
 </footer>
 
 <script>
