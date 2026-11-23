@@ -31,7 +31,8 @@ jobs:
           test -s TamagoChoupie.apk
           test -s TamagoChoupie-windows.zip
           sha256sum TamagoChoupie.apk TamagoChoupie-windows.zip | tee downloads.sha256
-          echo "DOWNLOAD_TAG=downloads-v2.0.0.29920377" >> "$GITHUB_ENV"
+          VERSION=$(python3 -c "import json; print(json.load(open('version.json'))['version'])")
+          echo "DOWNLOAD_TAG=downloads-v${VERSION}" >> "$GITHUB_ENV"
 
       - name: Créer la release publique et transférer les fichiers
         env:
@@ -42,7 +43,7 @@ jobs:
           if ! gh release view "$DOWNLOAD_TAG" >/dev/null 2>&1; then
             gh release create "$DOWNLOAD_TAG" \
               --target "$GITHUB_SHA" \
-              --title "Téléchargements TamagoChoupie 2.0.0.29920377" \
+              --title "Téléchargements TamagoChoupie ${DOWNLOAD_TAG#downloads-v}" \
               --notes "Fichiers de distribution pour le site public Tamachoupie. Les empreintes SHA-256 sont publiées dans downloads.sha256."
           fi
           gh release upload "$DOWNLOAD_TAG" \
