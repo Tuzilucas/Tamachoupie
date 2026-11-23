@@ -4,7 +4,8 @@ on:
   push:
     branches: [main]
     paths:
-      - ".github/workflows/publier-telechargements.yml"
+      - "TamagoChoupie.apk"
+      - "TamagoChoupie-windows.zip"
   workflow_dispatch:
 
 permissions:
@@ -12,10 +13,11 @@ permissions:
 
 concurrency:
   group: publier-telechargements
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   release-and-clean:
+    if: hashFiles('TamagoChoupie.apk') != '' && hashFiles('TamagoChoupie-windows.zip') != ''
     runs-on: ubuntu-latest
     steps:
       - name: Récupérer le dépôt
@@ -63,4 +65,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "chore(downloads): déplacer les binaires vers GitHub Releases"
-          git push origin HEAD:main
+          # Un autre push peut arriver pendant le transfert des assets : réintégrer main avant de réessayer.
+          for i in 1 2 3; do
+            git push origin HEAD:main && break
+            [ "$i" = 3 ] && exit 1
+            git fetch -q --unshallow origin main 2>/dev/null || git fetch -q origin main
+            git merge --no-edit -q FETCH_HEAD
+          done
