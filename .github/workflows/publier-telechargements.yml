@@ -17,7 +17,6 @@ concurrency:
 
 jobs:
   release-and-clean:
-    if: hashFiles('TamagoChoupie.apk') != '' && hashFiles('TamagoChoupie-windows.zip') != ''
     runs-on: ubuntu-latest
     steps:
       - name: Récupérer le dépôt
@@ -28,16 +27,22 @@ jobs:
           persist-credentials: true
 
       - name: Vérifier les fichiers de distribution
+        id: distribution
         shell: bash
         run: |
           set -euo pipefail
-          test -s TamagoChoupie.apk
-          test -s TamagoChoupie-windows.zip
+          if [ ! -s TamagoChoupie.apk ] || [ ! -s TamagoChoupie-windows.zip ]; then
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Aucun paquet complet à publier ; nettoyage déjà effectué ou publication en attente."
+            exit 0
+          fi
+          echo "present=true" >> "$GITHUB_OUTPUT"
           sha256sum TamagoChoupie.apk TamagoChoupie-windows.zip | tee downloads.sha256
           VERSION=$(python3 -c "import json; print(json.load(open('version.json'))['version'])")
           echo "DOWNLOAD_TAG=downloads-v${VERSION}" >> "$GITHUB_ENV"
 
       - name: Créer la release publique et transférer les fichiers
+        if: steps.distribution.outputs.present == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
@@ -58,6 +63,7 @@ jobs:
           grep -Fxq "downloads.sha256" release-assets.txt
 
       - name: Retirer les binaires du site et pousser le commit
+        if: steps.distribution.outputs.present == 'true'
         shell: bash
         run: |
           set -euo pipefail
