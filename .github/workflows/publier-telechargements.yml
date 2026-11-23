@@ -17,6 +17,8 @@ concurrency:
 
 jobs:
   release-and-clean:
+    # Un lancement manuel depuis une branche de travail ne doit jamais publier le contenu de main.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Récupérer le dépôt
