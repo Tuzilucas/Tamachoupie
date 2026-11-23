@@ -1,0 +1,64 @@
+name: Publier les téléchargements et alléger le site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/publier-telechargements.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publier-telechargements
+  cancel-in-progress: false
+
+jobs:
+  release-and-clean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Vérifier les fichiers de distribution
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s TamagoChoupie.apk
+          test -s TamagoChoupie-windows.zip
+          sha256sum TamagoChoupie.apk TamagoChoupie-windows.zip | tee downloads.sha256
+          echo "DOWNLOAD_TAG=downloads-v2.0.0.29920377" >> "$GITHUB_ENV"
+
+      - name: Créer la release publique et transférer les fichiers
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! gh release view "$DOWNLOAD_TAG" >/dev/null 2>&1; then
+            gh release create "$DOWNLOAD_TAG" \
+              --target "$GITHUB_SHA" \
+              --title "Téléchargements TamagoChoupie 2.0.0.29920377" \
+              --notes "Fichiers de distribution pour le site public Tamachoupie. Les empreintes SHA-256 sont publiées dans downloads.sha256."
+          fi
+          gh release upload "$DOWNLOAD_TAG" \
+            TamagoChoupie.apk TamagoChoupie-windows.zip downloads.sha256 \
+            --clobber
+          gh release view "$DOWNLOAD_TAG" --json assets --jq '.assets[].name' | sort > release-assets.txt
+          grep -Fxq "TamagoChoupie.apk" release-assets.txt
+          grep -Fxq "TamagoChoupie-windows.zip" release-assets.txt
+          grep -Fxq "downloads.sha256" release-assets.txt
+
+      - name: Retirer les binaires du site et pousser le commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rm TamagoChoupie.apk TamagoChoupie-windows.zip
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(downloads): déplacer les binaires vers GitHub Releases"
+          git push origin HEAD:main
