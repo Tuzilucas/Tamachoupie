@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: publier-telechargements
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   release-and-clean:
@@ -21,7 +21,8 @@ jobs:
       - name: Récupérer le dépôt
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          ref: main
+          fetch-depth: 1
           persist-credentials: true
 
       - name: Vérifier les fichiers de distribution
@@ -42,7 +43,7 @@ jobs:
           set -euo pipefail
           if ! gh release view "$DOWNLOAD_TAG" >/dev/null 2>&1; then
             gh release create "$DOWNLOAD_TAG" \
-              --target "$GITHUB_SHA" \
+              --target "$(git rev-parse HEAD)" \
               --title "Téléchargements TamagoChoupie ${DOWNLOAD_TAG#downloads-v}" \
               --notes "Fichiers de distribution pour le site public Tamachoupie. Les empreintes SHA-256 sont publiées dans downloads.sha256."
           fi
