@@ -1,28 +1,11 @@
-MIT License
+Copyright (c) 2026 Lucas Tuzi. Tous droits réservés.
 
-Copyright (c) 2026 Lucas Tuzi
+TamagoChoupie (code source, scènes, scripts, outils et créations originales du projet) est la propriété exclusive de
+son auteur. Aucune licence n'est accordée pour copier, modifier, distribuer, vendre ou réutiliser tout ou partie de
+ces éléments sans son autorisation écrite. Le jeu publié peut être téléchargé et joué librement, à titre personnel.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Ressources tierces : les modèles, sons, polices et images provenant de tiers conservent leurs propres licences,
+indiquées dans CREDITS.md et dans les fichiers LICENSE.txt des dossiers jeu/assets/.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-## Scope
-
-This license applies to original source code and original project assets authored
-for TamagoChoupie, except where a more specific license or notice is provided.
-Third-party assets retain their own terms. See CREDITS.md and the LICENSE.txt
-files in the corresponding asset directories.
+Historique : les versions publiées entre le 23 et le 25 novembre 2026 étaient distribuées sous licence MIT ; cette
+licence reste acquise pour ces versions-là uniquement. Toute version ultérieure relève du présent avis.
