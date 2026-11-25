@@ -29,6 +29,3 @@ tiers pour les personnages.
 
 Écrits pour TamagoChoupie : Choupie, les animaux (modèles, squelettes et animations), la musique et les cris sont générés
 par code ; les bruitages de l'île viennent de packs CC0 (voir le tableau).
-
-
-Les chemins `jeu/assets/...` désignent les fichiers du dépôt source privé `Tuzilucas/TamagoChoupie` ; le présent dépôt public distribue les exports du jeu.
