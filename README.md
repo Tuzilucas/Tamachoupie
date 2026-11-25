@@ -10,7 +10,7 @@ sauvegardée dans le navigateur de l'appareil.
 Ce dépôt ne contient que la version exportée pour le web (`index.html`, `index.wasm`, `index.pck`…), générée
 automatiquement à partir du projet Godot. Les décors utilisent des modèles libres de droits : voir [`CREDITS.md`](CREDITS.md).
 
-Le code et les créations originales du projet sont sous licence MIT ; les ressources tierces conservent leurs licences propres. Voir [`LICENSE`](LICENSE) et [`CREDITS.md`](CREDITS.md).
+Le jeu se télécharge et se joue librement. Son code et ses créations originales restent la propriété de leur auteur (tous droits réservés) ; les ressources tierces conservent leurs licences propres. Voir [`LICENSE`](LICENSE) et [`CREDITS.md`](CREDITS.md).
 
 ## Commandes
 
