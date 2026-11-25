@@ -4,7 +4,8 @@ on:
   push:
     branches: [main]
     paths:
-      - ".github/workflows/publier-telechargements.yml"
+      - "TamagoChoupie.apk"
+      - "TamagoChoupie-windows.zip"
   workflow_dispatch:
 
 permissions:
@@ -12,10 +13,12 @@ permissions:
 
 concurrency:
   group: publier-telechargements
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   release-and-clean:
+    # Un lancement manuel depuis une branche de travail ne doit jamais publier le contenu de main.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Récupérer le dépôt
@@ -26,16 +29,22 @@ jobs:
           persist-credentials: true
 
       - name: Vérifier les fichiers de distribution
+        id: distribution
         shell: bash
         run: |
           set -euo pipefail
-          test -s TamagoChoupie.apk
-          test -s TamagoChoupie-windows.zip
+          if [ ! -s TamagoChoupie.apk ] || [ ! -s TamagoChoupie-windows.zip ]; then
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Aucun paquet complet à publier ; nettoyage déjà effectué ou publication en attente."
+            exit 0
+          fi
+          echo "present=true" >> "$GITHUB_OUTPUT"
           sha256sum TamagoChoupie.apk TamagoChoupie-windows.zip | tee downloads.sha256
           VERSION=$(python3 -c "import json; print(json.load(open('version.json'))['version'])")
           echo "DOWNLOAD_TAG=downloads-v${VERSION}" >> "$GITHUB_ENV"
 
       - name: Créer la release publique et transférer les fichiers
+        if: steps.distribution.outputs.present == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
@@ -56,6 +65,7 @@ jobs:
           grep -Fxq "downloads.sha256" release-assets.txt
 
       - name: Retirer les binaires du site et pousser le commit
+        if: steps.distribution.outputs.present == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -63,4 +73,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "chore(downloads): déplacer les binaires vers GitHub Releases"
-          git push origin HEAD:main
+          # Un autre push peut arriver pendant le transfert des assets : réintégrer main avant de réessayer.
+          for i in 1 2 3; do
+            git push origin HEAD:main && break
+            [ "$i" = 3 ] && exit 1
+            git fetch -q --unshallow origin main 2>/dev/null || git fetch -q origin main
+            git merge --no-edit -q FETCH_HEAD
+          done
